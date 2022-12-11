@@ -9,7 +9,8 @@ function submitting(event) {
   } = event.currentTarget;
   if (email.value === "" || password.value === "") {
     alert("Please, complete all the fields");
+    return;
   }
-  console.log({"email": email.value, "password": password.value});
+  console.log({ email: email.value, password: password.value });
   event.currentTarget.reset();
 }

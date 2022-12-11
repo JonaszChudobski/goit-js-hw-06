@@ -16,16 +16,15 @@ function createBoxes(amount) {
   }
 }
 
-function destroyBoxes() {}
+function destroyBoxes() {
+  while (boxesDiv.firstChild) {
+    boxesDiv.removeChild(boxesDiv.lastChild);
+  }
+}
 
 createButton.addEventListener("click", () => {
   const inputNumber = document.querySelector("input").value;
   createBoxes(inputNumber);
 });
 
-destroyButton.addEventListener("click", () => {
-  const inputNumber = document.querySelector("input").value;
-  for (let i = inputNumber; i > 0; i--) {
-    boxesDiv.childNodes[0].remove();
-  }
-});
+destroyButton.addEventListener("click", destroyBoxes);

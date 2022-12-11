@@ -6,6 +6,5 @@ function changeFont(inputValue) {
 }
 
 rangeInput.addEventListener("input", () => {
-  const inputValue = rangeInput.value;
-  changeFont(inputValue);
+  changeFont(rangeInput.value);
 });
